@@ -23,7 +23,7 @@ def forward(bot: Bot, update: Update):
 
 try:
     FORWARD_HANDLER = MessageHandler(Filters.chat(FROM_CHATS) & ~Filters.status_update & ~Filters.command,
-                                     forward, channel_post_updates=True), as_copy=True
+                                     forward, channel_post_updates=True, as_copy=True)
     
     dispatcher.add_handler(FORWARD_HANDLER)
 
